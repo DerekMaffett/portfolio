@@ -1,9 +1,10 @@
-# Approach
+# Specifications
 
-I set up minitest with Capybara, wrote the spec for visiting the root_path,
-and then made the necessary route modification, controller, and view to make
-it pass.
+This app consists of a basic scaffold for articles.
 
 # Screenshot
 
-![screenshot](https://www.dropbox.com/s/nrnosmif8zynyl4/Screenshot%20from%202014-09-17%2000%3A55%3A24.png?dl=0)
+![screenshot](https://www.dropbox.com/s/stao2mkheo4l8wx/Screenshot%20from%202014-09-18%2002%3A33%3A03.png?dl=0)
+
+In case the image doesn't work:
+https://www.dropbox.com/s/stao2mkheo4l8wx/Screenshot%20from%202014-09-18%2002%3A33%3A03.png?dl=0
