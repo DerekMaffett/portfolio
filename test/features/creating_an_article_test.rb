@@ -2,7 +2,10 @@ require_relative '../test_helper.rb'
 
 feature "creating an article" do
   scenario "submit form data to create a new article" do
-    # Given: An article does not exist
+    # Given: A given article does not exist
+    visit articles_path
+    page.wont_have_content "Test article"
+    page.wont_have_content "Behaviour driven development"
 
     # When: A form is submitted for a new article
     visit new_article_path

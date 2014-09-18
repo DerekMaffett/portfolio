@@ -3,13 +3,11 @@ require_relative '../test_helper.rb'
 feature "Editing an article" do
   scenario "submit form data to edit an article" do
     # Given: an article exists
-    @article = Article.create(
-      title: "Becoming a Code Fellow",
-      body: "means striving for excellence."
-      )
+    visit articles_path
+    page.must_have_content "Becoming a Code Fellow"
 
     # When: I edit an article
-    visit edit_article_path(@article)
+    visit edit_article_path(articles(:cf))
     fill_in "Body", with: "Edited text"
     click_on "Update Article"
 
