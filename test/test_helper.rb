@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
+require "minitest/reporters"
 require "minitest/rails"
 require "minitest/rails/capybara"
 
@@ -10,6 +11,8 @@ require "minitest/rails/capybara"
 
 # Uncomment for awesome colorful output
 # require "minitest/pride"
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class ActiveSupport::TestCase
     ActiveRecord::Migration.check_pending!
