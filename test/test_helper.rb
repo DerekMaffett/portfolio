@@ -5,7 +5,6 @@ require 'minitest/reporters'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
 require 'capybara/poltergeist'
-Capybara.ignore_hidden_elements = false
 Capybara.javascript_driver = :poltergeist
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
