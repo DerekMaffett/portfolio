@@ -9,3 +9,5 @@ AllCops:
   Exclude:
     - db/schema.rb
     - vendor/**/*
+    - config/**/*
+    - bin/**/*
