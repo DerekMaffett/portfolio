@@ -11,7 +11,6 @@ gem 'minitest-reporters'
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
@@ -28,6 +27,10 @@ group :development do
   gem 'guard-rubocop'
   gem 'spring'
   gem 'rails_layout'
+end
+
+group :development, :test do
+  gem 'sqlite3'
 end
 
 group :production do
