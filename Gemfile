@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'eefgilm'
+gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'libnotify'
@@ -16,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :test do
   gem 'minitest-rails-capybara'
+  gem 'poltergeist'
 end
 
 group :development do
