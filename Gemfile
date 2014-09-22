@@ -27,4 +27,5 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rubocop'
   gem 'spring'
+  gem 'rails_layout'
 end
