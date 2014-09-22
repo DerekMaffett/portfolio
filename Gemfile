@@ -29,3 +29,8 @@ group :development do
   gem 'spring'
   gem 'rails_layout'
 end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
