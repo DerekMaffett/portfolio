@@ -1,4 +1,4 @@
-require_relative '../test_helper.rb'
+require 'test_helper.rb'
 
 feature 'deleting an article' do
   scenario 'article is deleting by clicking a link' do

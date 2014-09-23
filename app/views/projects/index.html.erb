@@ -1,0 +1,17 @@
+<h2>My Portfolio</h2>
+
+<% @projects.each do |project| %>
+  <div class="project", id="<%= dom_id(project) %>">
+    <h3><%= project.name %></h3>
+    <p><%= project.description %></p>
+    <div class="nav"%>
+      <%= link_to 'Show', project %>
+      <%= link_to 'Edit', edit_project_path(project) %>
+      <%= link_to 'Delete', project, method: 'delete',
+        data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
+
+<br />
+<%= link_to 'New Project', new_project_path %>

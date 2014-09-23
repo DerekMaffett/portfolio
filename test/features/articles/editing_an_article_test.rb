@@ -1,4 +1,4 @@
-require_relative '../test_helper.rb'
+require 'test_helper.rb'
 
 feature 'Editing an article' do
   scenario 'submit form data to edit an article' do

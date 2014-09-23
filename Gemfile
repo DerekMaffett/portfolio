@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 group :test do
   gem 'minitest-rails-capybara'
   gem 'poltergeist'
+  gem 'launchy'
 end
 
 group :development do

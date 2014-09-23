@@ -1,4 +1,4 @@
-require_relative '../test_helper.rb'
+require 'test_helper.rb'
 
 feature 'visiting the article index' do
   scenario 'with existing articles, show list' do
