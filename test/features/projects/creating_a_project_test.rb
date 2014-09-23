@@ -8,7 +8,7 @@ feature 'creating a project' do
     fill_in 'Description', with: 'This project was made using Ruby on Rails'
     click_on 'Create Project'
     page.text.must_include 'Project has been created'
-    page.must_have_css '.info'
+    page.must_have_css '.success'
     page.status_code.must_equal 200
   end
 
@@ -26,5 +26,6 @@ feature 'creating a project' do
     page.text.must_include 'Project could not be saved'
     page.text.must_include 'Name is too short'
     page.text.must_include "Description can't be blank"
+    page.must_have_css '.alert'
   end
 end
