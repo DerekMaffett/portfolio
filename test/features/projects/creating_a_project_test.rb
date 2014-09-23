@@ -23,7 +23,7 @@ feature 'creating a project' do
     click_on 'Create Project'
 
     # Then: The form should be redisplayed with an error message
-    current_path.must_match /projects$/
+    current_path.must_match(/projects$/)
     page.text.must_include 'Project could not be saved'
     page.text.must_include 'Name is too short'
     page.text.must_include "Description can't be blank"
