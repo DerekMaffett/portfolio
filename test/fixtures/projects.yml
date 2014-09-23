@@ -3,6 +3,8 @@ codeschool:
   description: >
     Code School is a wonderful interactive website for learning
     how to code
+  image_url: >
+    https://s3-us-west-2.amazonaws.com/derek-portfolio/images/CodeSchool.png
 
 google:
   name: 'Google'
