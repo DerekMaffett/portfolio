@@ -7,6 +7,10 @@ Foundation 5 using the rails_layout gem, and slightly modified beyond that.
 The primary purpose of this is to have a set of images and links to projects
 I've worked on, with a small description of each one.
 
+Projects can be controlled via a basic rails CRUD interface, fully supported
+with flash messages styled appropriately using Foundation classes. Image url's
+can be added to projects, with the standard storage being on Amazon S3.
+
 # Production Site
 
-http://derek-portfolio.herokuapp.com/
+www.derekmaffett.com
