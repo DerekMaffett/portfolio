@@ -1,0 +1,11 @@
+codeschool:
+  name: 'Code School'
+  description: >
+    Code School is a wonderful interactive website for learning
+    how to code
+
+google:
+  name: 'Google'
+  description: >
+    Google is pretty much every web app imaginable.
+

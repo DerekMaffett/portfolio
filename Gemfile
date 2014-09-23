@@ -21,6 +21,8 @@ group :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-minitest'
@@ -28,6 +30,7 @@ group :development do
   gem 'guard-rubocop'
   gem 'spring'
   gem 'rails_layout'
+
 end
 
 group :development, :test do

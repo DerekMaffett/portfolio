@@ -7,6 +7,7 @@ feature 'creating a project' do
     fill_in 'Name', with: 'Awesome Code Fellows Project'
     fill_in 'Description', with: 'This project was made using Ruby on Rails'
     click_on 'Create Project'
+    page.text.must_include 'Awesome Code Fellows Project'
     page.text.must_include 'Project has been created'
     page.must_have_css '.success'
     page.status_code.must_equal 200
