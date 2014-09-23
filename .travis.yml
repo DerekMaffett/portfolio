@@ -6,12 +6,8 @@ rvm:
 - jruby-18mode
 - jruby-19mode
 - rbx
-
 deploy:
   provider: heroku
   app: derek-portfolio
-  api_key: SECURE
-
-env:
-  global:
-    secure: IFWnqpiHCw33iuB28lWpwEqwiWM0m3akUUBkClUa6QIHGB9429kCm+3u8pauW6LdqfJo3hgH3mPzbz9jqgAKaAQhkbo1PsQP4FV/fnqAp7L2jEKu3e02agJgbFT2xmxCJRWe0Prie0KW5caENis4Eyx9fLGgiFm7m1LqP17w1nY=
+  api_key:
+    secure: oTUNyLuaakwxhb02NHNYyvgUP7Ee+boQtbWgQ8CV4YBrxA/+oDVOUDwUtJOPZLLfsms5QNHzKEgiiO2JF3VUsOViGRuksqre/H17ZA8juz4s+HpyipX9lxoLs0u7uo03v5pXHHlwQJbYEdgX/+drPUYeh4FZuh8XENVXT99OqN0=
