@@ -1,4 +1,6 @@
-[ ![Codeship Status for DerekMaffett/portfolio](https://codeship.io/projects/ceb787b0-25a8-0132-1150-5620d5e70b74/status)](https://codeship.io/projects/37237)
+[![Coverage Status](https://coveralls.io/repos/DerekMaffett/portfolio/badge.png)](https://coveralls.io/r/DerekMaffett/portfolio)
+
+[![Codeship Status for DerekMaffett/portfolio](https://codeship.io/projects/ceb787b0-25a8-0132-1150-5620d5e70b74/status)](https://codeship.io/projects/37237)
 
 # Description
 
