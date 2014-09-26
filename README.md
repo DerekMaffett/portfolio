@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/DerekMaffett/portfolio/badge.png)](https://coveralls.io/r/DerekMaffett/portfolio)
+[![Coverage Status](https://img.shields.io/coveralls/DerekMaffett/portfolio.svg)](https://coveralls.io/r/DerekMaffett/portfolio)
 
 [![Codeship Status for DerekMaffett/portfolio](https://codeship.io/projects/ceb787b0-25a8-0132-1150-5620d5e70b74/status)](https://codeship.io/projects/37237)
 
@@ -23,7 +23,3 @@ chapter.
 
 www.derekmaffett.com
 
-NOTE: The test suite includes a test that pings the above site to ensure
-Heroku is still running the app in production. This is currently timing out
-and reporting a failure but not for apparent internal errors. This bug is being
-tracked.
