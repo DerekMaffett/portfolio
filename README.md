@@ -1,4 +1,4 @@
-[![Coverage Status](https://img.shields.io/coveralls/DerekMaffett/portfolio.svg)](https://coveralls.io/r/DerekMaffett/portfolio)
+[![Coverage Status](https://img.shields.io/coveralls/DerekMaffett/portfolio.svg)](https://coveralls.io/r/DerekMaffett/portfolio?branch=ch8)
 
 [![Codeship Status for DerekMaffett/portfolio](https://codeship.io/projects/ceb787b0-25a8-0132-1150-5620d5e70b74/status)](https://codeship.io/projects/37237)
 
