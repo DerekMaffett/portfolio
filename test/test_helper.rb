@@ -29,5 +29,12 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    def log_in
+      visit root_path
+      click_on 'Log In'
+      fill_in 'Email', with: users(:brook).email
+      fill_in 'Password', with: 'brookpassword'
+      click_on 'Log in'
+    end
   end
 end
