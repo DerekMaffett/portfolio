@@ -11,6 +11,17 @@ Projects can be controlled via a basic rails CRUD interface, fully supported
 with flash messages styled appropriately using Foundation classes. Image url's
 can be added to projects, with the standard storage being on Amazon S3.
 
+Authentication has been added to the articles controller using the standard
+Devise modules, and articles have been associated with users who create them.
+Very simple authorization has been established which hinges on simple
+authentication. Full authorization based on roles will be added in the next
+chapter.
+
 # Production Site
 
 www.derekmaffett.com
+
+NOTE: The test suite includes a test that pings the above site to ensure
+Heroku is still running the app in production. This is currently timing out
+and reporting a failure but not for apparent internal errors. This bug is being
+tracked.

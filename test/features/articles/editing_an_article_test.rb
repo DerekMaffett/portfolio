@@ -1,8 +1,9 @@
 require 'test_helper.rb'
 
 feature 'Editing an article' do
-  scenario 'submit form data to edit an article' do
+  scenario 'a logged in user submits form data to edit an article' do
     # Given: an article exists
+    log_in
     visit articles_path
     page.must_have_content 'Becoming a Code Fellow'
 
