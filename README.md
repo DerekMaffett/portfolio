@@ -15,9 +15,14 @@ can be added to projects, with the standard storage being on Amazon S3.
 
 Authentication has been added to the articles controller using the standard
 Devise modules, and articles have been associated with users who create them.
-Very simple authorization has been established which hinges on simple
-authentication. Full authorization based on roles will be added in the next
-chapter.
+
+Authorization has also been added to the articles controller using Pundit.
+Visitors are still prevented from manipulating resources using Devise, but now
+article creation has been separated into author and editor roles. Authors can
+make new articles and edit them, but can not publish them. Editors have full
+control over the site. In addition to authorization, scopes are also employed
+to limit authors to only seeing published articles and their own drafts, while
+visitors can only see published articles and editors can see everything.
 
 # Production Site
 

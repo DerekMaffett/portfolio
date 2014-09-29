@@ -21,6 +21,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'poltergeist'
   gem 'launchy'
+  gem 'simplecov', require: false
 end
 
 group :development do
