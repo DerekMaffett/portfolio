@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'coveralls', require: false
 gem 'devise'
 gem 'eefgilm'
 gem 'foundation-rails'
@@ -9,6 +10,7 @@ gem 'jquery-rails'
 gem 'libnotify'
 gem 'minitest-rails'
 gem 'minitest-reporters'
+gem 'pundit'
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -19,6 +21,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'poltergeist'
   gem 'launchy'
+  gem 'simplecov', require: false
 end
 
 group :development do

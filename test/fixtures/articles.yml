@@ -1,4 +1,20 @@
-cf:
+syllabus:
+  title: 'Syllabus'
+  body: 'Everybody mind the rules - here is the syllabus'
+  author: brook
+  published: true
+class_mods:
+  title: 'Modifications'
+  body: "There'll be some changes made today"
+  author: brook
+  published: false
+codefellow:
   title: 'Becoming a Code Fellow'
   body: 'Means striving for excellence.'
-  author: brook
+  author: author
+  published: true
+firephone:
+  title: 'The New FirePhone'
+  body: 'Amazon released a new phone. But my friend says it it terrible'
+  author: author
+  published: false

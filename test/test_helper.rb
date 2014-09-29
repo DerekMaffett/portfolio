@@ -1,3 +1,7 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+require 'coveralls'
+Coveralls.wear!
 ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
@@ -5,6 +9,7 @@ require 'minitest/reporters'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
 require 'capybara/poltergeist'
+
 Capybara.javascript_driver = :poltergeist
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
@@ -29,12 +34,29 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
-    def log_in
-      visit root_path
-      click_on 'Log In'
-      fill_in 'Email', with: users(:brook).email
-      fill_in 'Password', with: 'brookpassword'
+    def log_in(role = :editor)
+      visit new_user_session_path
+      fill_in 'Email', with: users(role).email
+      fill_in 'Password', with: 'password'
       click_on 'Log in'
+    end
+
+    def log_out
+      click_on 'Sign Out'
+    end
+
+    def must_show(fixture)
+      visit article_path(articles(fixture))
+      page.text.must_include(articles(fixture).title)
+      page.text.must_include(articles(fixture).body)
+    end
+
+    def wont_show(fixture)
+      lambda do
+        visit article_path(articles(fixture))
+        page.text.wont_include(articles(fixture).title)
+        page.text.wont_include(articles(fixture).body)
+      end.must_raise ActiveRecord::RecordNotFound
     end
   end
 end
