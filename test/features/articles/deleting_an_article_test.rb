@@ -7,7 +7,7 @@ feature 'deleting an article' do
     page.must_have_content 'Becoming a Code Fellow'
 
     # When: The delete link is clicked from the index view
-    page.click_on 'Destroy'
+    page.all('tr').last.click_on 'Destroy'
 
     # Then: The article no longer exists
     page.wont_have_content 'Becoming a Code Fellow'

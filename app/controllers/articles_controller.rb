@@ -2,9 +2,10 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, only: :create
+  after_action :verify_policy_scoped, only: :index
 
   def index
-    @articles = Article.all
+    @articles = policy_scope(Article)
   end
 
   def show
@@ -52,9 +53,6 @@ class ArticlesController < ApplicationController
   # the white list through.
   def article_params
     params.require(:article).permit(
-      :title,
-      :body,
-      (:published if ArticlePolicy.new(current_user, @article).publish?)
-    )
+      *policy(@article || Article).permitted_attributes)
   end
 end

@@ -8,7 +8,7 @@ feature 'Editing an article' do
     page.must_have_content 'Becoming a Code Fellow'
 
     # When: I edit an article
-    visit edit_article_path(articles(:cf))
+    visit edit_article_path(articles(:codefellow))
     fill_in 'Body', with: 'Edited text'
     click_on 'Update Article'
 
