@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(
       :title,
       :body,
-      (:published if current_user.role == 'editor')
+      (:published if ArticlePolicy.new(current_user, @article).publish?)
     )
   end
 end
