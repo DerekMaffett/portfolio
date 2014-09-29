@@ -11,6 +11,10 @@ class ArticlePolicy < ApplicationPolicy
     (user.editor? || record.owned_by?(user)) if user
   end
 
+  def destroy?
+    user.editor? if user
+  end
+
   def permitted_attributes
     if user.editor?
       [:title, :body, :published]

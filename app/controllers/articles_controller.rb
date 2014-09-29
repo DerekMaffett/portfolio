@@ -1,15 +1,14 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_article, only: [:update, :destroy]
-  after_action :verify_authorized, only: [:new, :create, :update, :edit]
-  after_action :verify_policy_scoped, only: [:index, :show]
+  before_action :set_scoped_article, except: [:index, :new, :create]
+  after_action :verify_authorized, except: [:index, :show]
+  after_action :verify_policy_scoped, except: [:new, :create]
 
   def index
     @articles = policy_scope(Article)
   end
 
   def show
-    @article = policy_scope(Article).find(params[:id])
   end
 
   def new
@@ -18,7 +17,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = policy_scope(Article).find(params[:id])
     authorize @article
   end
 
@@ -43,6 +41,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
@@ -50,8 +49,8 @@ class ArticlesController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_article
-    @article = Article.find(params[:id])
+  def set_scoped_article
+    @article = policy_scope(Article).find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow

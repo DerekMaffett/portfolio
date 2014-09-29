@@ -54,7 +54,7 @@ feature 'Editing an article' do
     visit edit_article_path(articles(:syllabus))
 
     # Then: I should be refused access
-    page.text.must_include 'You are not authorized'
+    page.text.must_include 'You are not authorized to perform this action'
     current_path.wont_match(/edit$/)
   end
 

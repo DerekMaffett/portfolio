@@ -39,3 +39,10 @@ distasteful at best since it means I end up patching all the methods with
 nil checks that don't really contribute much of anything beyond holding the
 program together). I suspect there is a better way of doing this and would
 appreciate any feedback on it.
+
+Also, I found little support within Capybara for issuing direct requests to
+controller actions as would be necessary to test whether even a normally
+impossible request for a deletion, update, or creation is possible. While the
+implemenation I used does lock them down, it's not supported well within the
+integration tests - functional tests may be necessary to test against tools
+such as curl.
