@@ -31,11 +31,10 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
-    def log_in
-      visit root_path
-      click_on 'Log In'
-      fill_in 'Email', with: users(:brook).email
-      fill_in 'Password', with: 'brookpassword'
+    def log_in(role = :editor)
+      visit new_user_session_path
+      fill_in 'Email', with: users(role).email
+      fill_in 'Password', with: 'password'
       click_on 'Log in'
     end
   end

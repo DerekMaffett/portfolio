@@ -23,3 +23,9 @@ chapter.
 
 www.derekmaffett.com
 
+# Problems
+
+Currently, the suggested tests don't actually prevent authors from submitting
+published articles - it just blocks them from seeing the checkbox. No controller
+level implementation is implied for enforcing this rule. This may need to be
+covered by a future test.

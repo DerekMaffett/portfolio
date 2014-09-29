@@ -11,3 +11,4 @@ AllCops:
     - vendor/**/*
     - config/**/*
     - bin/**/*
+    - db/migrate/20140925235651_devise_create_users.rb
