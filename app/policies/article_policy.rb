@@ -4,7 +4,11 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    true if user
+    true
+  end
+
+  def update?
+    (user.editor? || record.owned_by?(user)) if user
   end
 
   def permitted_attributes

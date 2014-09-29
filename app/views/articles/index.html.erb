@@ -15,7 +15,9 @@
         <td><%= article.title %></td>
         <td><%= article.body %></td>
         <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <% if policy(article).edit? %>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <% end %>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path if policy(@articles).new? %>
+<%= link_to 'New Article', new_article_path if user_signed_in? %>

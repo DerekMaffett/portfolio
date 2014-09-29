@@ -1,21 +1,25 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, only: :create
-  after_action :verify_policy_scoped, only: :index
+  before_action :set_article, only: [:update, :destroy]
+  after_action :verify_authorized, only: [:new, :create, :update, :edit]
+  after_action :verify_policy_scoped, only: [:index, :show]
 
   def index
     @articles = policy_scope(Article)
   end
 
   def show
+    @article = policy_scope(Article).find(params[:id])
   end
 
   def new
     @article = Article.new
+    authorize @article
   end
 
   def edit
+    @article = policy_scope(Article).find(params[:id])
+    authorize @article
   end
 
   def create
@@ -30,6 +34,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    authorize @article
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
     else

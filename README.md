@@ -25,7 +25,17 @@ www.derekmaffett.com
 
 # Problems
 
-Currently, the suggested tests don't actually prevent authors from submitting
-published articles - it just blocks them from seeing the checkbox. No controller
-level implementation is implied for enforcing this rule. This may need to be
-covered by a future test.
+One noticeable problem with the coding here is the avoidance of unnecessary nil
+checks. All authorizations assume that current_user will return a real user
+object, but visitors don't permit that when they're not logged in. I can avoid
+nil checks in the policy class by first blocking off all authorizable actions
+to only authenticated users using Devise. However, this doesn't solve the
+problem of what to do when using policy helper methods in the views. For
+example, in the index (accessible by all), I might want to hide certain buttons
+unless the user is authorized for a given action. However, since the policy
+class is exposed to non-signed-in visitors, nil checks become necessary either
+in the view (which isn't very DRY) or else in the policy class (which I find
+distasteful at best since it means I end up patching all the methods with
+nil checks that don't really contribute much of anything beyond holding the
+program together). I suspect there is a better way of doing this and would
+appreciate any feedback on it.

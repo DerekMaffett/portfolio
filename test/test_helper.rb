@@ -37,5 +37,23 @@ module ActiveSupport
       fill_in 'Password', with: 'password'
       click_on 'Log in'
     end
+
+    def log_out
+      click_on 'Sign Out'
+    end
+
+    def must_show(fixture)
+      visit article_path(articles(fixture))
+      page.text.must_include(articles(fixture).title)
+      page.text.must_include(articles(fixture).body)
+    end
+
+    def wont_show(fixture)
+      lambda do
+        visit article_path(articles(fixture))
+        page.text.wont_include(articles(fixture).title)
+        page.text.wont_include(articles(fixture).body)
+      end.must_raise ActiveRecord::RecordNotFound
+    end
   end
 end
