@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929041147) do
+ActiveRecord::Schema.define(version: 20140929072027) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140929041147) do
     t.integer  "author_id"
     t.boolean  "published"
   end
+
+  add_index "articles", ["published"], name: "index_articles_on_published"
 
   create_table "projects", force: true do |t|
     t.string   "name"
