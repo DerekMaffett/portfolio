@@ -1,4 +1,4 @@
-require 'spec_helper.rb'
+require 'spec_helper'
 
 feature 'creating an article' do
   scenario 'An author submits form data to create a new article' do
