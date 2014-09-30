@@ -29,7 +29,7 @@ feature 'creating an article' do
     visit new_article_path
 
     # Then: The visitor should be refused access
-    page.text.must_include 'You need to sign in or sign up before continuing'
+    page.text.must_include 'You are not authorized to perform this action'
     page.text.wont_include 'New article'
     current_path.wont_match(/articles\/new$/)
   end

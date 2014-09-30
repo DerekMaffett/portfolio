@@ -1,22 +1,22 @@
 class ArticlePolicy < ApplicationPolicy
   def publish?
-    user.editor?
+    @user.editor?
   end
 
   def create?
-    true
+    @user.editor? || @user.author?
   end
 
   def update?
-    (user.editor? || record.owned_by?(user)) if user
+    @user.editor? || record.owned_by?(@user)
   end
 
   def destroy?
-    user.editor? if user
+    @user.editor?
   end
 
   def permitted_attributes
-    if user.editor?
+    if @user.editor?
       [:title, :body, :published]
     else
       [:title, :body]
@@ -25,9 +25,9 @@ class ArticlePolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user && user.editor?
+      if user.editor?
         scope.all
-      elsif user && user.author?
+      elsif user.author?
         scope.where("author_id = ? OR published = 't'", user.id)
       else
         scope.where(published: true)

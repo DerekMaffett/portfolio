@@ -8,7 +8,7 @@ feature 'Editing an article' do
     visit edit_article_path(articles(:codefellow))
 
     # Then: I should be sent back with a message that I am not authorized
-    page.text.must_include 'You need to sign in or sign up before continuing'
+    page.text.must_include 'You are not authorized to perform this action'
     current_path.wont_match(/edit$/)
   end
 
