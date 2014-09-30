@@ -1,4 +1,4 @@
-require 'test_helper.rb'
+require 'spec_helper.rb'
 
 feature 'visiting the article index' do
   scenario 'a visitor should see only published articles' do

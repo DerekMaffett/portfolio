@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'editing a project' do
   scenario 'a valid edit is submitted' do

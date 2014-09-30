@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'HomePageInProductionTest' do
   scenario 'page is deployed', js: true do

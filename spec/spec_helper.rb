@@ -31,6 +31,7 @@ module ActiveSupport
     # Note: You'll currently still have to declare fixtures explicitly
     # in integration tests
     # -- they do not yet inherit this setting
+    self.fixture_path = File.join(Rails.root, 'spec', 'fixtures')
     fixtures :all
 
     # Add more helper methods to be used by all tests here...

@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'Sign out a user' do
   scenario 'A signed in user should be signed out after clicking the sign out

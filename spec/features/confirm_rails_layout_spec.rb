@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'Confirm Rails Layout' do
   scenario 'on page load' do

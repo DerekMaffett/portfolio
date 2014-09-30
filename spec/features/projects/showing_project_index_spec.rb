@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'showing project index' do
   scenario 'valid projects should show up on the index view' do

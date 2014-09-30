@@ -1,4 +1,4 @@
-require 'test_helper.rb'
+require 'spec_helper.rb'
 
 feature 'deleting an article' do
   scenario 'a visitor cannot see delete link in index view' do

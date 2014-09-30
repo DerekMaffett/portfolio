@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'showing an article' do
   scenario 'a visitor should be able to access a published article' do

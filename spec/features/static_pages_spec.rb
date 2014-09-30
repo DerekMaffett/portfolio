@@ -1,4 +1,4 @@
-require_relative '../test_helper.rb'
+require 'spec_helper.rb'
 
 feature 'Home page' do
   scenario 'a new visitor visits the home page' do

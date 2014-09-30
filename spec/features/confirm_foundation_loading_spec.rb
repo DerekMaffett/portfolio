@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'test for the presence of Foundation 5' do
   scenario 'the browser has received css files', js: true do

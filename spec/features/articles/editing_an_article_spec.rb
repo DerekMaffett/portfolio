@@ -1,4 +1,4 @@
-require 'test_helper.rb'
+require 'spec_helper.rb'
 
 feature 'Editing an article' do
   scenario 'a visitor should not be able to edit any article' do

@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'showing a project' do
   scenario 'the show view should show a single project' do

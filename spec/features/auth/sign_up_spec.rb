@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'sign-up test' do
   scenario 'Filling out a sign-up page with valid information' do

@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 feature 'deleting an article' do
   scenario 'when the delete link is clicked, the article should be deleted' do
