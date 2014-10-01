@@ -16,11 +16,12 @@ class CommentsController < ApplicationController
       params[:article_id])
     @comment = @article.comments.build(comment_params)
     if @comment.save
-      redirect_to @article, notice: "Thank you for commenting. Your comment has
+      flash[:notice] = "Thank you for commenting. Your comment has
         been received and is awaiting review."
     else
-      render 'articles/new'
+      flash[:alert] = "Invalid comment. Please revise and resubmit."
     end
+    redirect_to @article
   end
 
   def edit

@@ -9,4 +9,12 @@ feature 'creating a comment' do
     page.text.wont_include 'Trololol'
     page.text.must_include 'Thank you for commenting.'
   end
+
+  scenario 'an empty comment is invalid' do
+    visit article_path(articles(:codefellow))
+    fill_in 'Body', with: ''
+    click_on 'Submit Comment'
+
+    page.text.must_include 'Invalid comment'
+  end
 end
