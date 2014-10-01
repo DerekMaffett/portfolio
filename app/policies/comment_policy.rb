@@ -5,15 +5,15 @@ class CommentPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if @user.editor? || owns_comments_in_scope(scope)
-        scope
+      if @user.editor? || owns_article_in_scope
+        @scope
       else
-        scope.where(approved: true)
+        @scope.where(approved: true)
       end
     end
 
-    def owns_comments_in_scope(scope)
-      scope.first.article.author.id == @user.id if scope.present?
+    def owns_article_in_scope
+      @scope.detect { |c| c.article.author == @user }
     end
   end
 end
