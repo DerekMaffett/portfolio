@@ -4,6 +4,6 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
 
   def unapproved?
-    !self.approved
+    !approved
   end
 end

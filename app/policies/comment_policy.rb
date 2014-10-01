@@ -13,7 +13,7 @@ class CommentPolicy < ApplicationPolicy
     end
 
     def owns_article_in_scope
-      @scope.detect { |c| c.article.author == @user }
+      @scope.find { |c| c.article.author == @user }
     end
   end
 end
