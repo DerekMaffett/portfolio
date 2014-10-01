@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = @article.comments.build
+    @comments = CommentPolicy::Scope.new(current_user, @article.comments).resolve
   end
 
   def new

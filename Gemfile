@@ -34,7 +34,6 @@ group :development do
   gem 'guard-rubocop'
   gem 'spring'
   gem 'rails_layout'
-
 end
 
 group :development, :test do

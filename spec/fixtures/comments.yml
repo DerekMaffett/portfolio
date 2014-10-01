@@ -1,0 +1,8 @@
+troll:
+  body: 'Your mother was a tractor!'
+  approved: false
+  article: codefellow
+kudos:
+  body: 'Excellent article. I loved it.'
+  approved: true
+  article: codefellow
