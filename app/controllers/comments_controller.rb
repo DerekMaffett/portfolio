@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     @article = Pundit.policy_scope(current_user, Article).find(
       params[:article_id])
     @comment = policy_scope(@article.comments).find(params[:id])
-    # authorize @comment
+    authorize @comment
     @comment.update(approved: true)
     redirect_to @article
   end
