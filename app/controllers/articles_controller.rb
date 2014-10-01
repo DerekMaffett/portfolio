@@ -9,8 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = @article.comments.build
-    @comments = CommentPolicy::Scope.new(
-      current_user, @article.comments).resolve
+    @comments = Pundit.policy_scope(current_user, @article.comments)
   end
 
   def new

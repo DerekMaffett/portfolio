@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @article = ArticlePolicy::Scope.new(current_user, Article).resolve.find(
+    @article = Pundit.policy_scope(current_user, Article).find(
       params[:article_id])
     @comment = @article.comments.build(comment_params)
     if @comment.save

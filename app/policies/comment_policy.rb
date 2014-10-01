@@ -1,7 +1,11 @@
 class CommentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(approved: true)
+      if user.editor?
+        scope
+      else
+        scope.where(approved: true)
+      end
     end
   end
 end
