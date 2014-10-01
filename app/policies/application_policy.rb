@@ -1,9 +1,8 @@
 class ApplicationPolicy
-
   attr_reader :user, :record
 
   class NullUser
-    def method_missing(method)
+    def method_missing(*)
       false
     end
   end
