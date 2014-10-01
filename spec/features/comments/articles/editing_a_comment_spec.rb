@@ -9,7 +9,7 @@ feature 'editing a comment' do
   scenario 'an author can approve comments on his own articles' do
     log_in(:author)
     visit article_path(articles(:codefellow))
-    page.find('p', text: comments(:troll).body).click_on 'Approve'
+    page.find('div.comment', text: comments(:troll).body).click_on 'Approve'
     page.wont_have_link 'Approve'
 
     log_out
@@ -20,15 +20,14 @@ feature 'editing a comment' do
 
   scenario 'an author can not approve comments on other authors articles' do
     log_in(:author)
-    visit article_path(articles(:codefellow))
+    visit article_path(articles(:syllabus))
     page.wont_have_link 'Approve'
   end
 
   scenario 'an editor can approve all comments' do
     log_in(:editor)
     visit article_path(articles(:codefellow))
-    page.find('p', text: comments(:troll).body).click_on 'Approve'
-    click_on 'Approve'
+    page.find('div.comment', text: comments(:troll).body).click_on 'Approve'
 
     log_out
 

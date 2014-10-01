@@ -8,8 +8,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @comment = @article.comments.build
     @comments = Pundit.policy_scope(current_user, @article.comments)
+    @comment = Comment.new
   end
 
   def new

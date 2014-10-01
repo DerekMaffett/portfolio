@@ -8,7 +8,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    @user.editor? || record.owned_by?(@user)
+    @user.editor? || @record.owned_by?(@user)
   end
 
   def destroy?
