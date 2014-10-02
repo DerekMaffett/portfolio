@@ -1,0 +1,16 @@
+troll:
+  body: 'Your mother was a tractor!'
+  approved: false
+  article: codefellow
+kudos:
+  body: 'Excellent article. I loved it.'
+  approved: true
+  article: codefellow
+thanks:
+  body: 'Thanks for posting the syllabus!'
+  approved: true
+  article: syllabus
+buystuff:
+  body: 'Hey you should by product I not robot'
+  approved: false
+  article: syllabus

@@ -1,0 +1,12 @@
+<div class="comment">
+  <p>--> <%= comment.body %></p>
+  <div class="row">
+    <div class="columns small-1">
+      <% if policy(comment).approve? && comment.unapproved? %>
+        <%= link_to 'Approve',
+        approve_article_comment_path(@article, comment),
+        method: :patch %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :articles
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  resources :articles do
+    resources :comments, only: :create do
+      patch :approve, on: :member
+    end
+  end
   resources :projects
   root 'static_pages#index'
 

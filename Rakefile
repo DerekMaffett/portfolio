@@ -8,6 +8,11 @@ Rails.application.load_tasks
 task default: 'test'
 
 Rake::TestTask.new do |t|
-  t.libs << 'test'
-  t.pattern = 'test/features/**/*_test.rb'
+  t.libs << 'spec'
+  t.pattern = 'spec/**/*_spec.rb'
+end
+
+Rake::TestTask.new('test:controllers' => 'test:prepare') do |t|
+  t.libs << 'spec'
+  t.pattern = 'spec/controllers/**/*_spec.rb'
 end

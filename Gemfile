@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'libnotify'
 gem 'minitest-rails'
 gem 'minitest-reporters'
+gem 'omniauth-twitter'
 gem 'pundit'
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
@@ -34,7 +35,6 @@ group :development do
   gem 'guard-rubocop'
   gem 'spring'
   gem 'rails_layout'
-
 end
 
 group :development, :test do

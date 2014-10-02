@@ -26,4 +26,16 @@
   <%= link_to 'Destroy', article_path(@article), method: :delete,
     data: { confirm: "Are you sure?" } %>
 <% end %>
+
+<h3>Comments</h3>
+
+<%= render partial: 'comments/comment',
+  collection: @comments,
+  spacer_template: 'comments/spacer' ||
+  "No comments have submitted for this article yet" %>
+
+<h4>Leave us a comment!</h4>
+
+<%= render 'comments/form' %>
+
 <%= link_to 'Back', articles_path %>
