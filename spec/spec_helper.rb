@@ -59,5 +59,19 @@ module ActiveSupport
         page.text.wont_include(articles(fixture).body)
       end.must_raise ActiveRecord::RecordNotFound
     end
+
+    def log_in_twitter_visitor
+      OmniAuth.config.test_mode = true
+      OmniAuth.config.add_mock(:twitter,
+       { uid: '12345', info: { nickname: 'test_twitter_user' } })
+      visit root_path
+      Capybara.current_session.driver.request.env['devise.mapping'] =
+        Devise.mappings[:user]
+      Capybara.current_session.driver.request.env['omniauth.auth'] =
+        OmniAuth.config.mock_auth[:twitter]
+
+      click_on 'Log In'
+      click_on 'Sign in with Twitter'
+    end
   end
 end

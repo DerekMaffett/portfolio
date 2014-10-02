@@ -17,3 +17,6 @@
 
 # Ignore coverage folder
 /coverage
+
+# Ignore environment variables
+.env

@@ -1,12 +1,5 @@
 class CommentsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
-  def new
-  end
+  before_action :authenticate_user!, only: :create
 
   def create
     @article = Pundit.policy_scope(current_user, Article).find(
@@ -28,15 +21,6 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.update(approved: true)
     redirect_to @article
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private
